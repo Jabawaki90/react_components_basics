@@ -11,7 +11,19 @@ function ExpenseItem(props) {
   return (
     <div>
       <ExpenseFilter selected={year} onFilterChange={onChangeHandler} />
-      <div className="expense-item">
+      {props.expenses.map((item)=>{
+        const {id, date, amount,title} = item
+        return <div key={id} className="expense-item">
+                  <div>{date.toString()}</div>
+                    <div className="expense-item__description">
+                    <h2>{title}</h2>
+                    <div className="expense-item__price">${amount}</div>
+                  </div>
+                  <button>Change Title</button>
+                </div>
+      })}
+
+      {/* <div className="expense-item">
         <div>{props.expenses[0].date.toString()}</div>
         <div className="expense-item__description">
           <h2>{props.expenses[0].title}</h2>
@@ -42,7 +54,7 @@ function ExpenseItem(props) {
           <div className="expense-item__price">${props.expenses[3].amount}</div>
         </div>
         <button>Change Title</button>
-      </div>
+      </div> */}
     </div>
   );
 }
