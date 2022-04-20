@@ -19,6 +19,11 @@ const expenses = [
     title: "NewDesk (Wooden)",
     amount: 450,
     date: new Date(2021, 5, 12),
+  },{
+    id:"e5",
+    title: "Detergent",
+    amount: 213,
+    date: new Date(2021,7,23)
   },
 ];
 
